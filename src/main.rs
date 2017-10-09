@@ -32,10 +32,18 @@ impl std::convert::From<ws::Message> for Action {
     }
 }
 
+fn fib(n: i64) -> i64 {
+  if n < 2 { return n; }
+  return fib(n - 1) + fib(n - 2)
+}
+
 fn main() {
+    println!("Start...");
+    println!("{}", fib(40));
+
     env_logger::init().unwrap();
 
-    ws::listen("127.0.0.1:3012", |out| {
+    ws::listen("0.0.0.0:3012", |out| {
         move |msg: ws::Message| {
             println!("Server got message '{:#?}'. ", msg);
             let value = Action::from(msg);
