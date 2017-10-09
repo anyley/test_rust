@@ -1,0 +1,15 @@
+[package]
+name = "server"
+version = "0.1.0"
+authors = ["Valery Kobzar <valery.kobzar@rcntec.com>"]
+
+[dependencies]
+ws = "*"
+env_logger = "*"
+serde = "*"
+serde_json = "*"
+serde_derive = "*"
+
+[dependencies.yaml-rust]
+git = "https://github.com/chyh1990/yaml-rust.git"
+
