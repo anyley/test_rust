@@ -32,15 +32,8 @@ impl std::convert::From<ws::Message> for Action {
     }
 }
 
-fn fib(n: i64) -> i64 {
-  if n < 2 { return n; }
-  return fib(n - 1) + fib(n - 2)
-}
-
 fn main() {
     println!("Start...");
-    println!("{}", fib(40));
-
     env_logger::init().unwrap();
 
     ws::listen("0.0.0.0:3012", |out| {
